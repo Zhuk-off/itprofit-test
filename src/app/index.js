@@ -1,4 +1,5 @@
 import './styles/style.sass';
+import Inputmask from 'inputmask';
 
 const form = document.getElementById('form');
 const buttonSubmit = document.getElementById('submit');
@@ -30,11 +31,18 @@ buttonCloseModal.addEventListener('click', () => {
 });
 
 function showModal() {
-  modal.classList.toggle('hidden');
-  form.classList.toggle('hidden');
+  // modal.classList.toggle('hidden');
+  // form.classList.toggle('hidden');
 }
 
 function closeModal() {
   modal.classList.toggle('hidden');
   form.classList.toggle('hidden');
 }
+
+
+// Маска для телефона
+const phoneInputs = document.getElementById('phone'); 
+const im = new Inputmask("+375-(99)-999-99-99");
+im.mask(phoneInputs);
+
