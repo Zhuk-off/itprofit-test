@@ -1,9 +1,183 @@
-@font-face
-  font-family: 'MyFont'
-  src: url('../Agbalumo-Regular.ttf') format('truetype')
-  font-weight: 600
-  font-style: normal
+/*Обнуление
 
-.hello
-  color: green
-  font-family: 'MyFont'
+*
+  padding: 0
+  margin: 0
+  border: 0
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+  &:before, &:after
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+\:focus, :active
+  outline: none
+
+a
+  &:focus, &:active
+    outline: none
+
+nav, footer, header, aside
+  display: block
+
+html, body
+  height: 100%
+  width: 100%
+  font-size: 100%
+  line-height: 1
+  font-size: 14px
+  -ms-text-size-adjust: 100%
+  -moz-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+input, button, textarea
+  font-family: inherit
+
+input::-ms-clear
+  display: none
+
+button
+  cursor: pointer
+
+  &::-moz-focus-inner
+    padding: 0
+    border: 0
+
+a
+  text-decoration: none
+
+  &:visited, &:hover
+    text-decoration: none
+
+ul
+  margin: 0
+
+  li
+    list-style: none
+    margin: 0
+
+img
+  vertical-align: top
+
+h1, h2, h3, h4, h5, h6
+  font-size: inherit
+  font-weight: 400
+  margin: 0
+
+p
+  margin: 0
+
+/* ------------------------
+
+body 
+  background-image: url('../img/bg.webp')
+  background-position: center bottom
+  background-size: cover
+  background-repeat: no-repeat
+  font-family: Roboto
+ 
+
+.wrapper
+  height: 100vh
+  width: 100vw
+  display: flex
+  justify-content: center
+  align-items: center
+  overflow: scroll
+
+.form
+  display: flex
+  flex-direction: column
+  width: 310px
+  background-color: rgba(0, 12, 20, 0.54)
+  filter: drop-shadow(0px 4px 13px rgba(0, 0, 0, 0.25))
+  padding: 30px
+
+.form__title
+  color: #8CBDE6
+  text-align: center
+  font-family: Roboto
+  font-size: 24px
+  font-style: normal
+  font-weight: 400
+  line-height: 20px
+  margin-bottom: 45px
+
+.form__fields
+  display: flex
+  flex-direction: column
+  gap: 30px
+  margin-bottom: 45px
+
+.form__field input, .form__field textarea
+  background-color: transparent
+  border-bottom: 1px solid #1B5280
+  color: #CFE9FF
+  font-size: 16px
+  line-height: 20px
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 150ms
+  &:hover
+     border-bottom: 1px solid #CFE9FF
+  &:focus
+     border-bottom: 1px solid #CFE9FF
+
+.form__label
+  color: #8CBDE6
+  font-size: 14px
+  
+.form__input, .form__textarea
+  width: 100%
+  padding: 5px
+  margin-top: 5px
+
+.form__submit-button
+  //
+.modal
+  width: 310px
+  display: block
+  background-color: rgba(0, 12, 20, 0.54)
+  filter: drop-shadow(0px 4px 13px rgba(0, 0, 0, 0.25))
+  padding: 30px
+  align-items: center
+  justify-content: center
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 150ms
+
+.modal__content
+  display: flex
+  flex-direction: column
+  gap: 45px
+  background-color: transparent
+  color: #8CBDE6
+  font-size: 24px
+  text-align: center
+
+
+.modal__close-button
+  //
+
+.hidden
+  display: none
+
+.button
+  width: 100%
+  background-color: #1B5280
+  color: #8CBDE6
+  display: flex
+  justify-content: center
+  align-content: center
+  padding: 10px 0 12px 0
+  cursor: pointer
+  transition-property: all
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+  transition-duration: 150ms
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05)
+  &:hover
+    background-color: #4983B3
+    color: #CFE9FF

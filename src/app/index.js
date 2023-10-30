@@ -1,14 +1,40 @@
-import _ from 'lodash';
-import "./styles/style.sass";
+import './styles/style.sass';
 
-function component() {
-  const element = document.createElement('div');
+const form = document.getElementById('form');
+const buttonSubmit = document.getElementById('submit');
+const buttonCloseModal = document.getElementById('closeModal');
+const modal = document.getElementById('modal');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+  // Пример: отправка данных формы с использованием fetch API
+  // fetch('ваш_серверный_обработчик.php', {
+  //   method: 'POST',
+  //   body: new FormData(e.target)
+  // })
+  //   .then(response => response.json())
+  //   .then(data => {
+  //     // Обработка ответа от сервера (если нужно)
+  //   })
+  //   .catch(error => {
+  //     console.error('Произошла ошибка', error);
+  //   });
+});
 
-  return element;
+buttonSubmit.addEventListener('click', () => {
+  showModal();
+});
+
+buttonCloseModal.addEventListener('click', () => {
+  closeModal();
+});
+
+function showModal() {
+  modal.classList.toggle('hidden');
+  form.classList.toggle('hidden');
 }
 
-document.body.appendChild(component());
+function closeModal() {
+  modal.classList.toggle('hidden');
+  form.classList.toggle('hidden');
+}
