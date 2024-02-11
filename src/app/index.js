@@ -1,77 +1,63 @@
 import './styles/style.sass';
 import Inputmask from 'inputmask';
 
-const form = document.getElementById('form');
-const buttonSubmit = document.getElementById('submit');
-const buttonCloseModal = document.getElementById('closeModal');
-const modal = document.getElementById('modal');
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  validateForm(form);
+const form = document.forms.form;
+const modalButton = document.getElementById('modal-button');
+const modalButtonClose = document.getElementById('closeModal');
 
-  // Пример: отправка данных формы с использованием fetch API
-  // fetch('ваш_серверный_обработчик.php', {
-  //   method: 'POST',
-  //   body: new FormData(e.target)
-  // })
-  //   .then(response => response.json())
-  //   .then(data => {
-  //     // Обработка ответа от сервера (если нужно)
-  //   })
-  //   .catch(error => {
-  //     console.error('Произошла ошибка', error);
-  //   });
-});
-
-// Ajax отправка формы
+// AJAX отправка формы
 function sendForm(form) {
-  fetch('ваш_серверный_обработчик.php', {
+  form.classList.add('rotate-vert-center');
+  const button = form.querySelector('.form__submit-button');
+  console.log(button);
+  button.setAttribute('disabled', 'disabled');
+  const status = form.querySelector('.form__status');
+  status.classList.remove('form__status_err');
+  status.classList.remove('form__status_success');
+  form.classList.remove('form_success');
+  form.classList.remove('form_error');
+
+  fetch('http://localhost:9090/api/registration', {
     method: 'POST',
-    body: new FormData(form)
+    body: new FormData(form),
   })
-    .then(response => response.json())
-    .then(data => {
-      if(data.status === 'error') {
-        for (let key in data.fields) {
-          let field = form.querySelector(`[name="${key}"]`).parentNode;
-          field.classList.add('form__field_error');
-          let errMessage = field.querySelector('.error');
-          errMessage.innerText = data.fields[key];
-        }
-      } else if(data.status === 'success') {
-        alert(data.msg);  // Выводим сообщение об успешной отправке
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('data', data);
+      if (data.status === 'error') {
+        form.classList.remove('form_success');
+        form.classList.add('form_error');
+        status.classList.remove('form__status_success');
+        status.classList.add('form__status_err');
+
+        status.innerText = data?.fields?.inputName;
+      } else if (data.status === 'success') {
+        form.reset();
+        console.log(data?.message);
+        form.classList.remove('form_error');
+        form.classList.add('form_success');
+        status.classList.add('form__status_success');
+        status.classList.remove('form__status_err');
+        status.innerText = data?.message;
       }
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Произошла ошибка', error);
+    })
+    .finally(() => {
+      setTimeout(() => {
+        form.classList.remove('rotate-vert-center');
+        button.removeAttribute('disabled');
+      }, 500);
     });
 }
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
-  if(validateForm(form)) {
+  if (validateForm(form)) {
     sendForm(form);
   }
 });
-
-
-buttonSubmit.addEventListener('click', () => {
-  showModal();
-});
-
-buttonCloseModal.addEventListener('click', () => {
-  closeModal();
-});
-
-function showModal() {
-  // modal.classList.toggle('hidden');
-  // form.classList.toggle('hidden');
-}
-
-function closeModal() {
-  modal.classList.toggle('hidden');
-  form.classList.toggle('hidden');
-}
 
 // Маска для телефона
 const phoneInputs = document.getElementById('phone');
@@ -120,7 +106,7 @@ function validateForm(form) {
           validate = false;
           formField.classList.add('form__field_error');
           const errMessage = formField.querySelectorAll('.error')[0];
-          errMessage.innerText = 'Введите сообщение ';
+          errMessage.innerText = 'Введите сообщение';
         }
         break;
 
@@ -131,3 +117,21 @@ function validateForm(form) {
   return validate;
 }
 
+modalButton.addEventListener('click', () => {
+  const modal = document.getElementById('modal');
+  document.body.classList.toggle('no-scroll');
+  modal.showModal();
+  modal.classList.remove('slide-out-blurred-top');
+  modal.classList.add('slide-in-blurred-top');
+});
+
+modalButtonClose.addEventListener('click', () => {
+  const modal = document.getElementById('modal');
+  document.body.classList.toggle('no-scroll');
+  modal.classList.remove('slide-in-blurred-top');
+  modal.classList.add('slide-out-blurred-top');
+  setTimeout(() => {
+    modal.close();
+    modal.classList.remove('slide-out-blurred-top');
+  }, 450);
+});

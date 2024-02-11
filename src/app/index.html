@@ -6,74 +6,187 @@
     <title>Тестовое задание</title>
   </head>
   <body>
-    <div class="wrapper">
-      <form class="form" id="form">
-        <h1 class="form__title">Будем на связи!</h1>
-        <div class="form__fields">
-          <div class="form__field">
-            <label for="name" class="form__label">Имя</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="form__input"
-              value="Alex"
-              required
-            />
-            <div class="form__error error"></div>
+    <div>
+      <div class="wrapper">
+        <form class="form" id="form">
+          <h1 class="form__title">Будем на связи!</h1>
+          <div class="form__fields">
+            <div class="form__field">
+              <label for="name" class="form__label">Имя</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form__input"
+                required
+              />
+              <div class="form__error error"></div>
+            </div>
+            <div class="form__field">
+              <label for="email" class="form__label">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form__input"
+                required
+              />
+              <div class="form__error error"></div>
+            </div>
+            <div class="form__field">
+              <label for="phone" class="form__label">Телефон</label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                class="form__input"
+                required
+              />
+              <div class="form__error error"></div>
+            </div>
+            <div class="form__field">
+              <label for="message" class="form__label">Сообщение</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form__textarea"
+                cols="2"
+                required
+              ></textarea>
+              <div class="form__error error"></div>
+            </div>
           </div>
-          <div class="form__field">
-            <label for="email" class="form__label">E-mail</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form__input"
-              value="zhu@gmail.com"
-              required
-            />
-            <div class="form__error error"></div>
-          </div>
-          <div class="form__field">
-            <label for="phone" class="form__label">Телефон</label>
-            <input
-              type="text"
-              id="phone"
-              name="phone"
-              class="form__input"
-              value="295669666"
-              required
-            />
-            <div class="form__error error"></div>
-          </div>
-          <div class="form__field">
-            <label for="message" class="form__label">Сообщение</label>
-            <textarea
-              id="message"
-              name="message"
-              class="form__textarea"
-              cols="2"
-              required
-            >
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque eveniet cupiditate temporibus totam ut molestiae nam, neque consectetur tempore laudantium qui aliquam nulla pariatur alias deserunt rem! Tenetur, et qui?</textarea
-            >
-            <div class="form__error error"></div>
-          </div>
-        </div>
-
-        <button class="form__submit-button button" type="submit" id="submit">
-          Отправить
-        </button>
-      </form>
-
-      <dialog id="modal" class="modal hidden">
-        <div class="modal__content">
-          <p class="modal__message">Сообщение отправлено. Спасибо!</p>
-          <button class="modal__close-button button" id="closeModal">
-            Закрыть
+          <button class="form__submit-button button" type="submit" id="submit">
+            Отправить
           </button>
-        </div>
-      </dialog>
+          <div class="form__status"></div>
+        </form>
+        <button class="modal-button button" id="modal-button">
+          Открыть модальное окно
+        </button>
+        <dialog id="modal" class="modal">
+          <div class="modal__content">
+            <p class="modal__message">
+              Спасибо, что открыли для себя это модальное окно!
+            </p>
+            <button class="modal__close-button button" id="closeModal">
+              Закрыть
+            </button>
+          </div>
+        </dialog>
+      </div>
+    </div>
+    <div class="content">
+      <p class="content__text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, illo et
+        placeat dicta ipsum adipisci sapiente aspernatur praesentium nobis hic
+        excepturi earum quas pariatur blanditiis repellat autem omnis, maxime ad
+        amet quos nisi laboriosam recusandae! Veritatis consectetur voluptates
+        vero ipsam omnis sit est, provident sapiente repellendus eos numquam
+        soluta eius mollitia a. Aperiam magni voluptas maiores, quas omnis ex
+        aliquid debitis suscipit quos soluta ducimus quod corrupti blanditiis
+        dolores recusandae praesentium, saepe laudantium doloribus labore esse
+        tempora temporibus nulla quasi! Odio aspernatur quibusdam recusandae?
+        Nulla voluptatibus unde provident obcaecati iusto voluptas, placeat
+        laudantium rerum tempora repudiandae dignissimos voluptates maiores
+        quidem ipsa error illo aliquam, soluta dolorum. Commodi voluptatibus
+        vitae consequuntur neque, quaerat quibusdam at ipsam corrupti, nisi enim
+        officia, sapiente magnam cupiditate dolor! Veritatis aperiam porro
+        deserunt ex reprehenderit modi blanditiis maxime cumque quod nemo ullam
+        asperiores fuga quam maiores consequuntur cum debitis ut, magnam facere
+        harum provident ratione ipsam eligendi? Sint, perspiciatis nisi.
+        Consequatur eveniet in voluptatem beatae ipsa error eaque laborum
+        provident impedit? Minima pariatur quibusdam suscipit laborum, ipsum
+        numquam iusto sequi inventore. Itaque velit aut animi pariatur placeat
+        sint aliquam, vitae magni cum commodi repellat ab inventore soluta sunt
+        quae et, perferendis, recusandae nobis? Neque et est, sed veniam ducimus
+        cumque earum? Doloremque non accusamus ducimus itaque corporis amet ut
+        deserunt fugit quia eveniet cum expedita in tenetur beatae, maiores eos
+        ab asperiores, quas alias porro dolorum architecto rem? Nemo itaque iure
+        praesentium? Consequuntur quo nemo amet rem, itaque totam deserunt
+        ducimus voluptatibus perspiciatis? Exercitationem eum obcaecati impedit
+        ratione nihil! Nobis officiis velit tempora consectetur? Sunt quo
+        placeat asperiores, necessitatibus assumenda unde, harum commodi fugit
+        temporibus, iure quas eligendi veniam error vel non dolor libero? Iusto
+        voluptas in quia sapiente omnis temporibus culpa similique, excepturi
+        veniam atque eveniet perferendis ea totam modi beatae nulla accusamus
+        animi facere molestias at quidem! Quaerat omnis debitis odio beatae
+        exercitationem optio fuga recusandae illo magni eaque, amet repellendus
+        soluta eius ab nam laudantium voluptate? Dolorem voluptate minima
+        corporis delectus ex quasi corrupti, magni fuga explicabo soluta dolores
+        nihil tempore eveniet necessitatibus alias voluptas dolore voluptatem!
+        Molestias dolores itaque, ratione quia, hic ducimus sequi unde magnam
+        fuga cum officia delectus consequuntur facilis corrupti fugiat. Sit
+        dicta deserunt quos optio error eius non veritatis impedit fuga! At
+        totam commodi et ratione esse consequuntur cum perferendis iusto
+        reiciendis, pariatur maxime quod, officia temporibus hic sit soluta
+        labore non vel autem doloremque illum corporis minus fuga amet? Porro
+        praesentium sequi, voluptate distinctio aliquid, consectetur illum
+        assumenda nisi a architecto nulla. Veritatis ex sapiente necessitatibus,
+        voluptates doloremque hic reprehenderit qui magnam, blanditiis labore
+        earum nam recusandae iure in maxime maiores quia consequatur tempora
+        fuga ducimus quas! Error cum distinctio non. Quibusdam rerum a aut
+        aperiam quas eius, cumque doloremque quasi cum harum, ipsa voluptatem
+        laborum ad. Ipsum quaerat suscipit autem tempore vero quia culpa sequi
+        sapiente nulla eligendi, inventore sunt magni aliquid nam cum veniam
+        velit reprehenderit beatae, maxime vel. Quasi quia rem laborum amet
+        dolorum sapiente explicabo vero consectetur facere harum reiciendis
+        sequi at et, tempora cum debitis? Iure voluptatem voluptates obcaecati,
+        exercitationem repellendus dolores eligendi, tempore fugiat ipsam
+        recusandae distinctio excepturi. Sapiente suscipit dolorem, pariatur
+        ducimus officia architecto fuga ipsa quas labore autem eligendi dolorum,
+        magni dolores ullam! Doloremque, consectetur. Ad deserunt ipsum
+        voluptatem suscipit repellat exercitationem non, nulla aut ducimus! Id
+        dolorum molestiae nobis repellat deleniti eum esse sequi ipsam,
+        accusamus modi ad magni, consequuntur odio vitae rem, quasi soluta est.
+        Beatae esse error, architecto sed ut dignissimos, maxime itaque
+        laboriosam exercitationem perferendis ullam sit eum quidem obcaecati
+        labore vitae facilis nihil? Enim aliquam iure repellendus tempora nulla
+        vitae magni, quia placeat beatae consequatur, recusandae reprehenderit
+        quae provident veniam sunt quo voluptates quaerat optio vel sapiente
+        ipsam. Ut, porro at, modi harum reprehenderit, corrupti voluptate error
+        omnis iure sunt dicta nesciunt? Nesciunt doloribus recusandae, dolores
+        architecto vero, exercitationem, impedit quod odit distinctio laudantium
+        asperiores reprehenderit incidunt tenetur velit id? Repellat alias porro
+        deserunt eius ut at tempore corrupti. Nisi vel excepturi velit,
+        voluptates iure at fuga quos fugiat quo eaque eos ab aliquid libero
+        voluptatum unde? Nisi impedit dolorem fugit adipisci quia laboriosam et
+        tempora, quod illum aperiam. Temporibus perspiciatis alias molestiae
+        porro illo quia quae dolore at? Accusantium magnam vel ut minima veniam
+        nihil quis, unde sunt quos, neque deleniti. Illum, eius quod cupiditate
+        atque quisquam blanditiis? Similique dolorum in magnam natus error fuga
+        soluta ut quidem dolorem? Itaque pariatur quam optio ex consectetur
+        deserunt dolor laboriosam, fugiat veritatis quibusdam sint repellat
+        distinctio numquam expedita debitis delectus quos sed commodi eveniet
+        earum voluptatum vel harum. Dicta ipsa molestiae quis, eveniet dolorem
+        saepe, fugit quae voluptates quaerat nulla, dignissimos aliquam.
+        Voluptas quo nobis laborum aliquid error animi accusamus quis vitae,
+        quia dolorum recusandae ratione cupiditate reprehenderit? Fugit dolorem
+        esse, perspiciatis ducimus consequuntur, eius officiis voluptas, nihil
+        quaerat facere reprehenderit laborum quod suscipit dolores a! Optio
+        officia aliquam vel reprehenderit aperiam cumque deserunt a ab nemo
+        iusto sit quos odit similique vitae eveniet laborum nobis alias,
+        distinctio atque ullam soluta. Est nesciunt animi nostrum cumque quia
+        obcaecati labore possimus necessitatibus commodi dignissimos sit
+        assumenda vitae similique, repudiandae inventore facilis velit! Harum
+        quam deserunt repellat fugit incidunt vero dolor commodi voluptas velit
+        dolores, quisquam quaerat similique, minima animi repellendus minus quo.
+        Ducimus accusamus veniam officiis laudantium molestiae id modi, illo
+        expedita cumque voluptatum accusantium eos odit quisquam iste quae enim
+        dignissimos reprehenderit tenetur. Corrupti dolore dolor quasi
+        aspernatur, vel excepturi a? Ratione cum ducimus, error ipsum
+        repellendus, neque, odio pariatur dolore iusto distinctio iure tempora
+        optio. Impedit quidem, aliquam hic temporibus repellat voluptas?
+        Praesentium voluptate nisi quo corporis laboriosam, inventore tempora,
+        ad voluptatem laborum hic, vel tempore non numquam ex fugiat aspernatur
+        voluptates fuga totam iusto? Atque magnam animi excepturi corrupti vero
+        possimus nam in. Sapiente delectus rerum, quam asperiores pariatur
+        dignissimos dolores. Alias corporis iure soluta inventore ad a, vero vel
+        ratione possimus asperiores explicabo quas laboriosam. Neque officia
+        deserunt nemo nulla praesentium cum tempora dolorum ea incidunt
+        reprehenderit laborum cumque at quas quisquam ut fugit aspernatur, odio
+        a quidem nesciunt. Enim, tempore ratione.
+      </p>
     </div>
     <!-- <script src="index.js"></script> -->
   </body>

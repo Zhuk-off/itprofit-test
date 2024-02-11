@@ -1,19 +1,23 @@
-const express = require("express");
-const cors = require("cors");
+const express = require('express');
+const cors = require('cors');
 const app = express();
 
 const port = 9090;
 
 app.use(cors());
 
-app.post("/api/registration", (req, res) => {
+app.post('/api/registration', (req, res) => {
+   console.log(res,req)
   if (Math.random() > 0.5) {
     res.statusCode = 400;
 
     setTimeout(() => {
       res.send({
-        status: "error",
-        message: "Bad request",
+        status: 'error',
+        message: 'Bad request',
+        fields: {
+          inputName: 'сообщение об ошибке',
+        },
       });
     }, Math.random() * 1000);
 
@@ -23,18 +27,18 @@ app.post("/api/registration", (req, res) => {
   setTimeout(() => {
     res.statusCode = 200;
     res.send({
-      status: "success",
-      message: "You are registered",
+      status: 'success',
+      message: 'Ваша заявка успешно отправлена',
     });
   }, Math.random() * 1000);
 });
 
-app.get("/api/ping", (req, res) => {
-    res.statusCode = 200;
-    res.send({
-        status: "success",
-        message: "Server is ready",
-    });
+app.get('/api/ping', (req, res) => {
+  res.statusCode = 200;
+  res.send({
+    status: 'success',
+    message: 'Server is ready',
+  });
 });
 
 app.listen(port, () => {
