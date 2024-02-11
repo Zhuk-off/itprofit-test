@@ -12,19 +12,52 @@
         <div class="form__fields">
           <div class="form__field">
             <label for="name" class="form__label">Имя</label>
-            <input type="text" id="name" class="form__input" required />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form__input"
+              value="Alex"
+              required
+            />
+            <div class="form__error error"></div>
           </div>
           <div class="form__field">
             <label for="email" class="form__label">E-mail</label>
-            <input type="email" id="email" class="form__input" required />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form__input"
+              value="zhu@gmail.com"
+              required
+            />
+            <div class="form__error error"></div>
           </div>
           <div class="form__field">
             <label for="phone" class="form__label">Телефон</label>
-            <input type="text" id="phone" class="form__input" required />
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              class="form__input"
+              value="295669666"
+              required
+            />
+            <div class="form__error error"></div>
           </div>
           <div class="form__field">
             <label for="message" class="form__label">Сообщение</label>
-            <textarea id="message" class="form__textarea" cols="2" required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              class="form__textarea"
+              cols="2"
+              required
+            >
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque eveniet cupiditate temporibus totam ut molestiae nam, neque consectetur tempore laudantium qui aliquam nulla pariatur alias deserunt rem! Tenetur, et qui?</textarea
+            >
+            <div class="form__error error"></div>
           </div>
         </div>
 
@@ -33,15 +66,15 @@
         </button>
       </form>
 
-      <div id="modal" class="modal hidden">
+      <dialog id="modal" class="modal hidden">
         <div class="modal__content">
           <p class="modal__message">Сообщение отправлено. Спасибо!</p>
           <button class="modal__close-button button" id="closeModal">
             Закрыть
           </button>
         </div>
-      </div>
+      </dialog>
     </div>
-    <script src="index.js"></script>
+    <!-- <script src="index.js"></script> -->
   </body>
 </html>

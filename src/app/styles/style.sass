@@ -91,6 +91,7 @@ body
 .form
   display: flex
   flex-direction: column
+  box-shadow: 0px 10px 13px -7px #000000
   width: 310px
   background-color: rgba(0, 12, 20, 0.54)
   filter: drop-shadow(0px 4px 13px rgba(0, 0, 0, 0.25))
@@ -109,14 +110,14 @@ body
 .form__fields
   display: flex
   flex-direction: column
-  gap: 30px
+  gap: 25px
   margin-bottom: 45px
 
 .form__field input, .form__field textarea
   background-color: transparent
   border-bottom: 1px solid #1B5280
   color: #CFE9FF
-  font-size: 16px
+  font-size: 18px
   line-height: 20px
   transition-property: all
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
@@ -126,16 +127,35 @@ body
   &:focus
      border-bottom: 1px solid #CFE9FF
 
+.form__field_error input
+  border-bottom: 1px solid #E68F8C
+.form__field_error label
+  color: #E68F8C
+.form__field_error .error 
+  visibility: visible
+
+
+.form__field textarea::-webkit-scrollbar, ::-webkit-scrollbar
+  width: 0
+
 .form__label
   color: #8CBDE6
-  font-size: 14px
+  font-size: 16px
   
 .form__input, .form__textarea
   width: 100%
   padding: 5px
   margin-top: 5px
 
+.form__error
+  padding-top: 1px
+.error
+  height: 14px
+  visibility: hidden
+  font-size: 14px
+  color: #E68F8C
 .form__submit-button
+  
   //
 .modal
   width: 310px
@@ -169,6 +189,9 @@ body
   width: 100%
   background-color: #1B5280
   color: #8CBDE6
+  font-size: 16px
+  font-weight: 600
+  letter-spacing: .5px
   display: flex
   justify-content: center
   align-content: center

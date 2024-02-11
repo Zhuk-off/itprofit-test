@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "server": "node server/index.js"
   },
   "author": "Alexander",
   "license": "MIT",
@@ -29,6 +30,8 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
     "inputmask": "^5.0.8",
     "lodash": "^4.17.21"
   }
