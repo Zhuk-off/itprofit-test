@@ -7,7 +7,6 @@ const port = 9090;
 app.use(cors());
 
 app.post('/api/registration', (req, res) => {
-   console.log(res,req)
   if (Math.random() > 0.5) {
     res.statusCode = 400;
 
